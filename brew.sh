@@ -75,6 +75,21 @@ brew install pidcat   # colored logcat guy
 
 brew install zsh
 
+brew install tmux
+brew install lua
+brew install maven
+brew install mongodb
+brew install mysql
+brew install nmap
+brew install python
+brew install ruby
+brew install sqlite
+
+
+# Install PHP Packages
+brew tap homebrew/php
+brew install composer
+
 
 # Misc
 brew install youtube-dl
