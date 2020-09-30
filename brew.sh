@@ -1,99 +1,93 @@
 #!/bin/bash
 
-# Install command-line tools using Homebrew
-
 # Make sure we’re using the latest Homebrew
 brew update
 
 # Upgrade any already-installed formulae
 brew upgrade
 
-
 # GNU core utilities (those that come with OS X are outdated)
 brew install coreutils
 brew install moreutils
+
 # GNU `find`, `locate`, `updatedb`, and `xargs`, `g`-prefixed
 brew install findutils
+
 # GNU `sed`, overwriting the built-in `sed`
-brew install gnu-sed --with-default-names
-
-# Bash 4
-# Note: don’t forget to add `/usr/local/bin/bash` to `/etc/shells` before running `chsh`.
-brew install bash
-brew tap homebrew/versions
-brew install bash-completion2
-
-brew install homebrew/completions/brew-cask-completion
-
-# generic colouriser  http://kassiopeia.juls.savba.sk/~garabik/software/grc/
-brew install grc
+brew install gnu-sed
 
 # Install wget with IRI support
-brew install wget --with-iri
-
-# Install more recent versions of some OS X tools
-brew install macvim --with-override-system-vim
-brew linkapps macvim
-brew install homebrew/dupes/grep
-brew install homebrew/dupes/openssh
-brew install homebrew/dupes/screen
-
-
-# run this script when this file changes guy.
-brew install entr
-
-# github util. imho better than hub
-brew install gh
-
+brew install wget
 
 # mtr - ping & traceroute. best.
 brew install mtr
 
-    # allow mtr to run without sudo
-    # mtrlocation=$(brew info mtr | grep Cellar | sed -e 's/ (.*//') #  e.g. `/Users/paulirish/.homebrew/Cellar/mtr/0.86`
-    # sudo chmod 4755 $mtrlocation/sbin/mtr
-    # sudo chown root $mtrlocation/sbin/mtr
-
-
-# Install other useful binaries
-brew install the_silver_searcher
+# Install finders and jumpers
 brew install fzf
+brew install z
 
+# Install latest git version
 brew install git
-brew install imagemagick --with-webp
-brew install node # This installs `npm` too using the recommended installation method
-brew install pv
-brew install rename
-brew install tree
-brew install zopfli
-brew install ffmpeg --with-libvpx
 
-brew install terminal-notifier
-
-brew install android-platform-tools
-brew install pidcat   # colored logcat guy
-
+# Install ZSH Shell
 brew install zsh
 
-brew install tmux
-brew install lua
-brew install maven
-brew install mongodb
-brew install mysql
-brew install nmap
-brew install python
-brew install ruby
-brew install sqlite
+# Install zsh plugins
+brew install zsh-autosuggestions
+brew install zsh-completions
+brew install zsh-syntax-highlighting
 
+# Install GPG
+brew install gnupg
+brew install pinentry-mac
+
+# Install utilities
+brew install rename
+brew install tree
+brew install gradle
+brew install maven
+brew install nmap
+brew install tmux
+brew install yarn
+
+# Install editors
+brew install neovim
+
+# Install languages and tools
+brew install lua
+brew install go
+brew install ruby
+brew install rust
 
 # Install PHP Packages
-brew tap homebrew/php
+brew install php
 brew install composer
 
+# Install verions manager
+brew install nvm
+brew install pyenv
+
+# Install Databases
+brew install sqlite
 
 # Misc
 brew install youtube-dl
 
+# Install cask packages
+brew cask install macvim
+brew cask install mpv
+brew cask install vlc
+brew cask install rectangle
+brew cask install meld
+brew cask install qbittorrent
+brew cask install hiddenbar
+brew cask install karabiner-elements
+brew cask install adoptopenjdk
+brew cask install caffeine
+
+# Install AWS SAM
+brew tap aws/tap
+brew install aws-sam-cli
 
 # Remove outdated versions from the cellar
 brew cleanup
